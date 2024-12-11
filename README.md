@@ -1,5 +1,7 @@
 # 🌐 Pipe Network Bot [v1.0]
 
+Forked from https://github.com/Jaammerr/Pipe-Network-Bot
+
 ## 📋 目录
 - [功能特点](#-功能特点)
 - [系统要求](#-系统要求) 
