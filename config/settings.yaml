@@ -1,0 +1,19 @@
+# Application Configuration File
+# =============================
+
+# Core Settings
+# ------------
+threads: 10                    # Number of concurrent threads to run (minimum: 1)
+keepalive_interval: 7200        # How often to send keepalive signal (in seconds)
+heartbeat_interval: 6        # How often to send heartbeat signal (in hours)
+show_points_stats: true        # Show points statistics in the console
+referral_codes:
+  - "cnVpeWVjbH"
+
+# Startup Delay Configuration
+# -------------------------
+delay_before_start:
+  min: 2                       # Minimum delay before starting (seconds)
+  max: 3                       # Maximum delay before starting (seconds)
+
+
