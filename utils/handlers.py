@@ -25,23 +25,23 @@ def error_handler(*, return_operation_result: bool = False):
 
             except APIError as error:
                 self = args[0]
-                logger.error(f"Account: {self.account_data.email} | {func.__name__} failed (APIError): {error}")
+                logger.error(f"账户: {self.account_data.email} | {func.__name__} 失败 (请求异常): {error}")
                 if hasattr(self, 'handle_api_error'):
                     await self.handle_api_error(error)
 
             except JSONDecodeError as error:
                 self = args[0]
-                logger.error(f"Account: {self.account_data.email} | {func.__name__} failed (JSONDecodeError): {error}")
+                logger.error(f"账户: {self.account_data.email} | {func.__name__} 失败 (JSON解析异常): {error}")
 
             except asyncio.TimeoutError:
                 self = args[0]
-                logger.error(f"Account: {self.account_data.email} | {func.__name__} timeout")
+                logger.error(f"账户: {self.account_data.email} | {func.__name__} 超时")
                 if hasattr(self, 'handle_timeout'):
                     await self.handle_timeout()
 
             except Exception as error:
                 self = args[0]
-                logger.error(f"Account: {self.account_data.email} | {func.__name__} failed (Exception): {error}", exc_info=True)
+                logger.error(f"账户: {self.account_data.email} | {func.__name__} 失败 (异常): {error}", exc_info=True)
 
             if return_operation_result:
                 self = args[0]

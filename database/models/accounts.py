@@ -84,7 +84,7 @@ class Accounts(Model):
             account.session_blocked_until = session_blocked_until
             await account.save()
             logger.info(
-                f"Account: {email} | Set new session_blocked_until: {session_blocked_until}"
+                f"账户: {email} | 设置新会话: {session_blocked_until}"
             )
             return
 
@@ -96,5 +96,5 @@ class Accounts(Model):
         account.session_blocked_until = session_blocked_until
         await account.save()
         logger.info(
-            f"Account: {email} | Set new session_blocked_until: {session_blocked_until}"
+            f"账户: {email} | 设置新会话: {session_blocked_until}"
         )

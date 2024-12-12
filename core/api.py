@@ -123,7 +123,7 @@ class PipeNetworkAPI:
         if response == "User registered successfully":
             return response
 
-        raise APIError(f"Failed to register account: {response}")
+        raise APIError(f"注册账户失败: {response}")
 
     async def login(self) -> dict[str, Any]:
         json_data = {
@@ -136,7 +136,7 @@ class PipeNetworkAPI:
             self.session.headers.update({"authorization": f"Bearer {response['token']}"})
             return response
 
-        raise APIError(f"Failed to login account: {response}")
+        raise APIError(f"账户登录失败: {response}")
 
 
     async def login_in_extension(self):

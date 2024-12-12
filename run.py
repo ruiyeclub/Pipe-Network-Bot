@@ -24,13 +24,13 @@ async def run_module_safe(
         if config.delay_before_start.min > 0:
             if process_func == process_farming and account.email not in accounts_with_initial_delay:
                 random_delay = random.randint(config.delay_before_start.min, config.delay_before_start.max)
-                logger.info(f"Account: {account.email} | Initial farming delay: {random_delay} sec")
+                logger.info(f"账户: {account.email} | 开始挂机，等待: {random_delay} 秒")
                 await asyncio.sleep(random_delay)
                 accounts_with_initial_delay.add(account.email)
 
             elif process_func != process_farming:
                 random_delay = random.randint(config.delay_before_start.min, config.delay_before_start.max)
-                logger.info(f"Account: {account.email} | Sleep for {random_delay} sec")
+                logger.info(f"账户: {account.email} | 睡眠 {random_delay} 秒")
                 await asyncio.sleep(random_delay)
 
 

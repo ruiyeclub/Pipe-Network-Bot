@@ -19,17 +19,17 @@ sys.path.append(os.path.realpath("."))
 
 class Console:
     MODULES = (
-        "🔑 Register",
-        "🌾 Farm",
-        "📊 Export stats",
-        "❌ Exit",
+        "🔑 注册",
+        "🌾 开始挂机",
+        "📊 导出统计数据",
+        "❌ 退出",
     )
 
     MODULES_DATA = {
-        "🔑 Register": "register",
-        "🌾 Farm": "farm",
-        "📊 Export stats": "export_stats",
-        "❌ Exit": "exit",
+        "🔑 注册": "register",
+        "🌾 开始挂机": "farm",
+        "📊 导出统计数据": "export_stats",
+        "❌ 退出": "exit",
     }
 
     def __init__(self):
@@ -78,7 +78,7 @@ class Console:
         questions = [
             inquirer.List(
                 "module",
-                message=Fore.LIGHTBLACK_EX + "Select the module" + Style.RESET_ALL,
+                message=Fore.LIGHTBLACK_EX + "请选择功能模块" + Style.RESET_ALL,
                 choices=self.MODULES,
             ),
         ]
